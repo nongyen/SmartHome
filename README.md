@@ -13,6 +13,9 @@
 2. ESP8266 หรืออย่างอิ่น เอาไว้ควบคุม Relay
 3. แอพ LIFE360 (ในที่นี้จะไม่พูดเรื่องการใช้งานแอพนี้ และต้องสร้างสถานที่ในแอพนี้ไว้ด้วย)
 4. แอพ IFTTT 
+5. มี Web Server สำหรับเอาไว้รันไฟล์จาก Webhooks 
+6. (หากไม่มี Web Server เพื่อฝากไฟล์ มาใช้เซิฟเวอร์ส่วนตัวของผมได้ฟรี www.remotecloud.info)
+7. ความรู้พื้นฐานด้าน PHP 
 
 ## เตรียมพร้อมก่อนลงมือทำ
  * สร้างสถานที่ในแอพ LIFE360 ให้พร้อม
@@ -32,3 +35,17 @@
   * เราต้องเชื่อมต่อกับระบบของ LIFE360 ก่อน โดยล็อคอินเข้าไปได้เลย
   * แต่หน้านี้ผมเคยเชื่อมต่อกับระบบแล้ว จะขึ้นให้เลือกสถานที่แทน เราต้องการสถานที่ไหนก็เลือกได้เลย
     ![Img1](https://www.remotecloud.info/github_img/github_3.png)
+ * ต่อไปให้เลือก That ตัวสีดำๆ 
+     ![Img1](https://www.remotecloud.info/github_img/github_4.png)
+* แล้วค้นหา Webhooks
+       ![Img1](https://www.remotecloud.info/github_img/github_5.png)
+ * เลือก Make a web request
+ * ช่อง URL กรอกลิงค์ API ที่เรานำไฟล์ไว้ เช่น https://domain.com/api.php?action=on_light (ตรง action=on_light คือสั่งให้เปิดไฟ ถ้าปิดไฟจะเป็น off_light)
+ * จากนั้นกด Create ด้านล่าง 
+ * ขั้นต่อไป ตรงนี้สามารถเปลี่ยนชื่อได้ และถ้าเลือก Receive notifications when this Applet runs ตัวแอพจะแจ้งเตือนด้วยอีกที (แนะนำให้ปิด)
+ 
+  ![Img1](https://www.remotecloud.info/github_img/github_6.png)
+  # สิ้นสุดวิธีตั้งค่า
+  # ในส่วนวิธีแก้ไข API ลองศึกษาดูนะครับ ไม่ยาก
+  * Code By U-karat Limkunakoon
+  
