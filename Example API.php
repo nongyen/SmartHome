@@ -6,21 +6,21 @@ $texttime = array( "ตอนเช้า", "ตอนสาย", "ตอนเ�
 $numtime = date( "G.i" );
 
 if ( $numtime >= "5.00" && $numtime <= "7.59" ) {
-	$sn = "0"; 
+	$sn = "0";  //ตอนเช้า
 }else if ( $numtime >= "8.00" && $numtime <= "10.59" ) { 
-	$sn = "1"; 
+	$sn = "1"; //ตอนสาย
 }else if ( $numtime >= "11.00" && $numtime <= "12.59" ) { 
-	$sn = "2"; 
+	$sn = "2"; //ตอนเที่ยง
 }else if ( $numtime >= "13.00" && $numtime <= "16.59" ) { 
-	$sn = "3"; 
+	$sn = "3";  //ตอนบ่าย
 }else if ( $numtime >= "17.00" && $numtime <= "18.59" ) { 
-	$sn = "4"; 
+	$sn = "4"; //ตอนเย็น
 }else if ( $numtime >= "19.00" && $numtime <= "19.59" ) { 
-	$sn = "5"; 
+	$sn = "5"; //ตอนค่ำ
 }else if ( $numtime >= "20.00" && $numtime <= "23.59" ) { 
-	$sn = "6"; 
+	$sn = "6"; //ตอนดึก
 }else if ( $numtime >= "00.00" && $numtime <= "4.59" ) { 
-	$sn = "6"; 
+	$sn = "6"; //ตอนดึก
 }
 
 if($_GET[action]=="on_light"){
@@ -30,16 +30,16 @@ if($_GET[action]=="on_light"){
 		//ช่วง 5โมงเย็นถึง ตี5
 		//เปิดไฟนอกบ้านและในบ้าน 
 		//ไฟหน้าห้องน้ำ
-		$light_1 = "http://blynk-cloud.com/$blynktoken/update/V106?value=1";
+		$light_1 = "http://blynk-cloud.com/$blynktoken/update/V106?value=1"; //อย่าลืมแก้ PIN ของ Relay และ0=ปิด / 1=เปิด
 		$show_light_1 = json_decode(file_get_contents($light_1), true); 
 		//ไฟรั้ว
-		$light_2 = "http://blynk-cloud.com/$blynktoken/update/V100?value=1";
+		$light_2 = "http://blynk-cloud.com/$blynktoken/update/V100?value=1"; //อย่าลืมแก้ PIN ของ Relay และ0=ปิด / 1=เปิด
 		$show_light_2 = json_decode(file_get_contents($light_2), true);
 		//ไฟโรงรถ
-		$light_3 = "http://blynk-cloud.com/$blynktoken/update/V101?value=1";
+		$light_3 = "http://blynk-cloud.com/$blynktoken/update/V101?value=1"; //อย่าลืมแก้ PIN ของ Relay และ0=ปิด / 1=เปิด
 		$show_light_3 = json_decode(file_get_contents($light_3), true);
 		//ไฟห้องนั่งเล่น
-		$light_4 = "http://blynk-cloud.com/$blynktoken/update/V102?value=1";
+		$light_4 = "http://blynk-cloud.com/$blynktoken/update/V102?value=1"; //อย่าลืมแก้ PIN ของ Relay และ0=ปิด / 1=เปิด
 		$show_light_4 = json_decode(file_get_contents($light_4), true);  
 		
 		$sMessage = "ต้อนรับกลับบ้าน เปิดไฟให้แล้ว!!";
@@ -58,16 +58,16 @@ if($_GET[action]=="on_light"){
 if($_GET[action]=="off_light"){
  		//ปิดไฟตลอดเวลาถ้าออกจากบ้าน
 		//ไฟหน้าห้องน้ำ
-		$light_1 = "http://blynk-cloud.com/$blynktoken/update/V106?value=0";
+		$light_1 = "http://blynk-cloud.com/$blynktoken/update/V106?value=0"; //อย่าลืมแก้ PIN ของ Relay และ0=ปิด / 1=เปิด
 		$show_light_1 = json_decode(file_get_contents($light_1), true); 
 		//ไฟรั้ว
-		$light_2 = "http://blynk-cloud.com/$blynktoken/update/V100?value=0";
+		$light_2 = "http://blynk-cloud.com/$blynktoken/update/V100?value=0"; //อย่าลืมแก้ PIN ของ Relay และ0=ปิด / 1=เปิด
 		$show_light_2 = json_decode(file_get_contents($light_2), true);
 		//ไฟโรงรถ
-		$light_3 = "http://blynk-cloud.com/$blynktoken/update/V101?value=0";
+		$light_3 = "http://blynk-cloud.com/$blynktoken/update/V101?value=0"; //อย่าลืมแก้ PIN ของ Relay และ0=ปิด / 1=เปิด
 		$show_light_3 = json_decode(file_get_contents($light_3), true);
 		//ไฟห้องนั่งเล่น
-		$light_4 = "http://blynk-cloud.com/$blynktoken/update/V102?value=0";
+		$light_4 = "http://blynk-cloud.com/$blynktoken/update/V102?value=0"; //อย่าลืมแก้ PIN ของ Relay และ0=ปิด / 1=เปิด
 		$show_light_4 = json_decode(file_get_contents($light_4), true);  
 		
 		$sMessage = "ปิดไฟทั้งบ้านให้หมดแล้ว!!!";
